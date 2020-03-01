@@ -1,0 +1,32 @@
+<section class="ui raised segment">
+    <div class="ui grid ">
+        <div class="ui form six wide column">
+            <div class="ui stacked segment">
+                <form action="/addPoi" method="POST">
+                    <h3 class="ui header">Add Point of Interest</h3>
+                    <div class="two fields">
+                        <div class="field">
+                            <label>POI Name</label> <input placeholder="POI Name" type="text" name="poiName"/>
+                        </div>
+                        <div class="field">
+                            <label>POI Description</label> <input placeholder="Description" type="text" name="poiDescription"/>
+                        </div>
+                    </div>
+                    <div class="field"><label>POI Category</label> <input placeholder="Category" type="text" name="poiCategory"/></div>
+                    <div class="two fields">
+                        <div class="field">
+                            <label>POI Latitude</label> <input type="text" name="poiLatitude"/>
+                        </div>
+                        <div class="field">
+                            <label>POI Longitude</label> <input type="text" name="poiLongitude"/>
+                        </div>
+                     </div>
+                    <button class="ui blue submit button">Add POI</button>
+                </form>
+            </div>
+        </div>
+        <aside class="six wide column">
+            <img src="images/homer4.jpeg" class="ui medium image">
+        </aside>
+    </div>
+</section>
