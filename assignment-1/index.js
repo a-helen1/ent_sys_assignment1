@@ -2,9 +2,12 @@
 
 const Hapi = require('@hapi/hapi');
 
-//const dotenv = require('dotenv');
-
 require('dotenv').config();
+
+const dotenv = require('dotenv');
+
+
+
 
 const server = Hapi.server({
     port:3000,
