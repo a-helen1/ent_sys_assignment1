@@ -1,5 +1,7 @@
 'use strict';
 
+const POI = require('../models/poi');
+
 const Pois = {
     home: {
         handler: function(request, h) {
@@ -7,19 +9,25 @@ const Pois = {
         }
     },
     report: {
-        handler: function(request, h) {
+        handler: async function(request, h) {
+            const poi = await POI.find().lean();
             return h.view('report', {
                 title: 'Points of Interest',
-                poilist: this.poilist
+                poi: poi
             });
         }
     },
     addPoi: {
-        handler: function(request, h) {
+        handler:  async function(request, h) {
             const data = request.payload;
-            var userEmail= request.auth.credentials.id;
-            data.user= this.users[userEmail];
-            this.poilist.push(data);
+            const newPOI= new POI({
+                poiName: data.poiName,
+                poiDescription: data.poiDescription,
+                poiCategory: data.poiCategory,
+                poiLatitude: data.poiLatitude,
+                poiLongitude: data.poiLongitude
+            })
+            await newPOI.save();
             return h.redirect('/report');
         }
     }
