@@ -30,6 +30,11 @@ const Pois = {
             await newPOI.save();
             return h.redirect('/report');
         }
+    },
+    editPoi: {
+        handler: async function(request, h) {
+
+        }
     }
 };
 
