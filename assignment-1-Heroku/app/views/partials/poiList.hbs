@@ -1,0 +1,31 @@
+<section class="ui raised segment">
+    <div class="ui grid">
+        <aside class="six wide column">
+            <img src="images/homer5.jpg" class="ui medium image">
+        </aside>
+        <article class="sixteen wide column">
+            <table class="ui celled table segment">
+                <thead>
+                <tr>
+                    <th>POI Name</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>POI Latitude</th>
+                    <th>POI Longitude</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each poi}}
+                    <tr>
+                        <td> {{poiName}} </td>
+                        <td> {{poiDescription}} </td>
+                        <td> {{poiCategory }}</td>
+                        <td> {{poiLatitude}}</td>
+                        <td> {{poiLongitude}}</td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </article>
+    </div>
+</section>
